@@ -15,7 +15,7 @@ dimension.sh is a small public linux shell host (or pubnix system) that is open 
 We take the name from dimension.spodnet.uk.com, which was a collection of mixed Unix hosts ran at a UK college from 1997 to 2004. fifteen years after the shutdown of the system we decided to start again, with newer updated Linux and access to cheap resources.
 
 => /history.gmi History
-=> /users/ Users
+=> /cgi-bin/users Users
 => /services.gmi Services
 => /rules.gmi Rules
 => https://dimension.sh/join.html Join
