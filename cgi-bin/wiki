@@ -42,7 +42,7 @@ class WikitoGemtext(object):
         return "=> /cgi-bin/wiki?p={} {}".format(safe_name, match.group(1)).strip() + '\n'
 
 
-page_data = WIKILINK_REGEX.sub(WikitoGemText(), page_data)
+page_data = WIKILINK_REGEX.sub(WikitoGemtext(), page_data)
 
 gmi = md2gemini(page_data, ascii_table=True, plain=True, links='at-end')
 
