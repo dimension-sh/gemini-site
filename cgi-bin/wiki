@@ -1,0 +1,50 @@
+#!/usr/bin/env python3
+
+from md2gemini import md2gemini
+import markdown
+
+import sys
+import os
+import cgi
+import re
+
+DATA_FOLDER = os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data'))
+WIKI_ROOT = '/srv/wiki/'
+BAD_CHARACTERS = ['.', '/', '\\', ' ']
+WIKILINK_REGEX = re.compile(r"\* \[\[([\w ]+)\]\]")
+
+sys.stdout.write("20 text/gemini\r\n")
+
+# Get page name
+qs = cgi.parse()
+if 'p' in qs and len(qs['p']):
+    page = qs['p'][0].lower()
+else:
+    page = 'index'
+
+# Sanitize for bad filenames
+for char in BAD_CHARACTERS:
+    page = page.replace(char, '_')
+
+# Sanitize path and check if the page exists
+page_path = os.path.abspath(os.path.join(WIKI_ROOT, '%s.md' % page))
+if not page_path.startswith(WIKI_ROOT) or not os.path.exists(page_path):
+    page_path = os.path.join(WIKI_ROOT, '404.md')
+
+# Open and format the page
+with open(page_path, 'r') as fobj:
+    page_data = fobj.read()
+
+
+class WikitoGemtext(object):
+    def __call__(self, match):
+        safe_name = match.group(1).replace(' ', '_').lower()
+        return "=> /cgi-bin/wiki?p={} {}".format(safe_name, match.group(1)).strip() + '\n'
+
+
+page_data = WIKILINK_REGEX.sub(WikitoGemText(), page_data)
+
+gmi = md2gemini(page_data, ascii_table=True, plain=True, links='at-end')
+
+# Render the output
+sys.stdout.write(gmi)
