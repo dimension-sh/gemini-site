@@ -16,5 +16,6 @@ We take the name from dimension.spodnet.uk.com, which was a collection of mixed 
 => /history.gmi History
 => /cgi-bin/users Users
 => /services.gmi Services
-=> /rules.gmi Rules
+=> /cgi-bin/wiki?p=rules Rules
+=> /cgi-bin/wiki Wiki
 => https://dimension.sh/join.html Join
