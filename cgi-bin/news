@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+"""Parses news files and presents them in Gemini format."""
+import cgi
+import glob
+import os
+import sys
+
+import frontmatter
+from md2gemini import md2gemini
+
+DATA_FOLDER = os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data'))
+NEWS_ROOT = '/srv/news/'
+MAX_NEWS_ARTICLES = 5
+
+
+def main(output=sys.stdout):
+    output.write('20 text/gemini\n\n')
+
+    qs = cgi.parse()
+    try:
+        if 'page' in qs and len(qs['page']):
+            page = int(qs['page'][0])
+            if page < 0:
+                page = 1
+        else:
+            page = 1
+    except Exception:
+        page = 1
+
+    # Get the news files, and paginate
+    filenames = glob.glob(os.path.join(NEWS_ROOT, '*.md'))
+    filenames.sort(reverse=True)
+    start = (page - 1) * MAX_NEWS_ARTICLES
+
+    gmi = ''
+    for filename in filenames[start:start + MAX_NEWS_ARTICLES]:
+        with open(filename, 'r') as fobj:
+            post = frontmatter.load(fobj)
+        gmi += md2gemini(post.content, ascii_table=True, plain=True, links='at-end')
+
+    output.write(gmi)
+
+
+if __name__ == '__main__':
+    main()
