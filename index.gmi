@@ -1,4 +1,4 @@
-```
+```dimension.sh logo
   __                                                                          __
  /\ \  __                                     __                             /\ \
  \_\ \/\_\    ___ ___      __    ___     ____/\_\    ___     ___         ____\ \ \___
@@ -9,13 +9,23 @@
 ```
 
 # WELCOME
+
 dimension.sh is a small public linux shell host (or pubnix system) that is open to anyone who wants to learn, experiment, and socialize with other like minded people.
 
-We take the name from dimension.spodnet.uk.com, which was a collection of mixed Unix hosts ran at a UK college from 1997 to 2004. fifteen years after the shutdown of the system we decided to start again, with newer updated Linux and access to cheap resources.
+We offer the following services to our members:
+
+* SSH accessible Linux shell, with reasonable limits.</li>
+* Email at <b>@dimension.sh</b>, with access via IMAPS.</li>
+* A collection of the usual userland tools.</li>
+* Basic static file hosting at <b>https://dimension.sh/~yourusername</b> and
+* https://yourusername.dimension.sh</b>.</li>
+* Gopher hosting at <b>gopher://dimension.sh/1/~yourusername</b>.</li>
+* Gemini hosting at <b>gemini://dimension.sh/~yourusername</b>.</li>
+
+Membership is open, all we ask if you follow a few rules. If you're interested in joining, fill in the form to request an account.
 
 => /history.gmi History
 => /cgi-bin/users Users
-=> /services.gmi Services
 => /cgi-bin/wiki?p=rules Rules
 => /cgi-bin/wiki Wiki
 => https://dimension.sh/join.html Join
