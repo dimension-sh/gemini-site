@@ -14,13 +14,12 @@ dimension.sh is a small public linux shell host (or pubnix system) that is open 
 
 We offer the following services to our members:
 
-* SSH accessible Linux shell, with reasonable limits.</li>
-* Email at <b>@dimension.sh</b>, with access via IMAPS.</li>
-* A collection of the usual userland tools.</li>
-* Basic static file hosting at <b>https://dimension.sh/~yourusername</b> and
-* https://yourusername.dimension.sh</b>.</li>
-* Gopher hosting at <b>gopher://dimension.sh/1/~yourusername</b>.</li>
-* Gemini hosting at <b>gemini://dimension.sh/~yourusername</b>.</li>
+* SSH accessible Linux shell, with reasonable limits.
+* Email at `@dimension.sh`, with access via IMAPS.
+* A collection of the usual userland tools.
+* Basic static file hosting at `https://dimension.sh/~yourusername` and `https://yourusername.dimension.sh`.
+* Gopher hosting at `gopher://dimension.sh/1/~yourusername`.
+* Gemini hosting at `gemini://dimension.sh/~yourusername`.
 
 Membership is open, all we ask if you follow a few rules. If you're interested in joining, fill in the form to request an account.
 
