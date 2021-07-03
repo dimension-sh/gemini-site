@@ -23,8 +23,9 @@ We offer the following services to our members:
 
 Membership is open, all we ask if you follow a few rules. If you're interested in joining, fill in the form to request an account.
 
-=> /history.gmi History
-=> /cgi-bin/users Users
-=> /cgi-bin/wiki?p=rules Rules
-=> /cgi-bin/wiki Wiki
-=> https://dimension.sh/join.html Join
+=> /cgi-bin/news NEWS
+=> /history.gmi HISTORY
+=> /cgi-bin/users USERS
+=> /cgi-bin/wiki?p=rules RULES
+=> /cgi-bin/wiki WIKI
+=> https://dimension.sh/join.html JOIN

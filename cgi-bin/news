@@ -14,7 +14,8 @@ MAX_NEWS_ARTICLES = 5
 
 
 def main(output=sys.stdout):
-    output.write('20 text/gemini\n\n')
+    output.write('20 text/gemini\r\n')
+    output.write('# NEWS\n\n')
 
     qs = cgi.parse()
     try:
@@ -36,7 +37,9 @@ def main(output=sys.stdout):
     for filename in filenames[start:start + MAX_NEWS_ARTICLES]:
         with open(filename, 'r') as fobj:
             post = frontmatter.load(fobj)
+        gmi += '## {0}\n\n{1} - {2}\n\n'.format(post['title'], post['author'], post['date'])
         gmi += md2gemini(post.content, ascii_table=True, plain=True, links='at-end')
+        gmi += '\n\n'
 
     output.write(gmi)
 
