@@ -9,7 +9,7 @@ from md2gemini import md2gemini
 
 DATA_FOLDER = os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data'))
 WIKI_ROOT = '/srv/wiki/'
-BAD_CHARACTERS = ['.', '/', '\\', ' ']
+BAD_CHARACTERS = ('.', '/', '\\', ' ')
 WIKILINK_REGEX = re.compile(r'\* \[\[([\w ]+)\]\]')
 
 sys.stdout.write('20 text/gemini\r\n')
@@ -26,7 +26,8 @@ for char in BAD_CHARACTERS:
     page = page.replace(char, '_')
 
 # Sanitize path and check if the page exists
-page_path = os.path.abspath(os.path.join(WIKI_ROOT, '{0}.md'.format(page)))
+filename = '{0}.md'.format(page)
+page_path = os.path.abspath(os.path.join(WIKI_ROOT, filename))
 if not page_path.startswith(WIKI_ROOT) or not os.path.exists(page_path):
     page_path = os.path.join(WIKI_ROOT, '404.md')
 
