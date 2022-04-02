@@ -28,4 +28,4 @@ Membership is open, all we ask if you follow a few rules. If you're interested i
 => /cgi-bin/users USERS
 => /cgi-bin/wiki?p=rules RULES
 => /cgi-bin/wiki WIKI
-=> https://dimension.sh/join.html JOIN
+=> https://dimension.sh/join/ JOIN
