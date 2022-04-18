@@ -56,4 +56,4 @@ Around June 2020, nikdoof discovered the tildeverse and had a throwback to his e
 => /~nikdoof nikdoof
 => https://tildeverse.org/ tildeverse
 
-dimension.sh came online 26th June 2020, running CentOS 8, and was open to new members on the 3rd July 2020.
+dimension.sh came online 26th June 2020, running CentOS 8 at Digital Ocean UK, and was open to new members on the 3rd July 2020.
